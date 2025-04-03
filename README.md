@@ -43,6 +43,10 @@ DeviceLogonEvents
 | summarize Attempts = count() by ActionType, RemoteIP, DeviceName
 | order by Attempts
 ```
+
+![image](https://github.com/user-attachments/assets/9ee9089c-1f39-4898-8769-c8ba9684c11d)
+
+
 👨‍💻 **Findings:** Several bad actors attempted logins but were unsuccessful.
 
 #### 🔎 Query: Check for Successful Logins from Malicious IPs
@@ -92,6 +96,10 @@ DeviceLogonEvents
 | where AccountName == "labuser"
 | summarize LoginCount = count() by DeviceName, ActionType, AccountName, RemoteIP
 ```
+
+![image](https://github.com/user-attachments/assets/acd0c09c-9426-4662-839d-7c328c48cb1a)
+
+
 ✅ **All login sources appear legitimate.**
 
 📌 **Conclusion:** Though the device was internet-facing, no unauthorized access was detected.
